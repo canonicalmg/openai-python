@@ -40,10 +40,11 @@ def progress(total, desc):
 
     def incr(progress):
         meter.n = progress
+        # close the meter when the upload is finished
         if progress == total:
-            meter.close()
-        else:
             meter.refresh()
+        else:
+            meter.close()
 
     return incr
 
